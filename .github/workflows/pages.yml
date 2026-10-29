@@ -1,0 +1,45 @@
+name: 发布分析报告
+
+on:
+  push:
+    branches: [main, master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: 获取仓库文件
+        uses: actions/checkout@v5
+
+      - name: 配置 Pages
+        uses: actions/configure-pages@v5
+
+      - name: 准备静态页面
+        shell: bash
+        run: |
+          test -s outputs/结果报告.html
+          mkdir -p _site
+          cp outputs/结果报告.html _site/index.html
+          cp outputs/*.csv _site/
+
+      - name: 上传页面文件
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: 发布到 GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

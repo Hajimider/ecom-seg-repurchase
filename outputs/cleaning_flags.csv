@@ -1,0 +1,6 @@
+﻿rule,rows_flagged,amount_flagged
+missing_customer,135080,1447682.1199999996
+cancelled_invoice,9288,-896812.49
+nonpositive_quantity,10624,-896812.49
+nonpositive_price,2517,-22124.12
+valid_positive_customer_sale,397884,8911407.904

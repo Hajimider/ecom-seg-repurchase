@@ -1,0 +1,6 @@
+﻿step,rows,amount
+raw,541909,9747747.933999998
+after_excluding_missing_customer,406829,8300065.814000001
+after_excluding_cancelled_invoice,397924,8911407.904
+after_excluding_nonpositive_quantity,397924,8911407.904
+after_excluding_nonpositive_price,397884,8911407.904

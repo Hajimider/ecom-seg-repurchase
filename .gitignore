@@ -1,0 +1,54 @@
+# Python 环境与缓存
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# 编辑器、本机配置及临时文件
+.idea/
+.vscode/
+.env
+.env.*
+!.env.example
+*.log
+*.tmp
+~$*
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# 原始数据、派生交易及课程论文保留在本机
+/data/raw/
+/data/processed/
+论文材料/
+历史版本/
+*.sqlite
+*.sqlite3
+*.sqlite-wal
+*.sqlite-shm
+
+# 上传报告、结果表及 README 使用的图表
+/outputs/*
+!/outputs/结果报告.html
+!/outputs/*.csv
+!/outputs/*.png
+
+# GitHub Pages 的临时发布目录
+/_site/
+
+# 论文和模板即使移出原目录，也不上传
+*.doc
+*.docx
+*.docm
+*.dot
+*.dotx
+*.dotm
+*.pdf
+*.rtf
+*.odt
